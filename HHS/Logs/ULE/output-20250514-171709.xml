@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.8 on win32)" generated="2025-05-14T17:17:09.764826" rpa="false" schemaversion="5">
+<suite id="s1" name="AT UL 53369 ServiceModeScriptEntry" source="C:\hhsautomation\Tests\ULE\AT_UL_53369_ServiceModeScriptEntry.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Connection" owner="Keywords">
+<kw name="Init Connection" owner="HHSKeywords">
+<msg time="2025-05-14T17:17:11.731653" level="INFO">${data} = Init sucessfull hhs None Connection succesfully opened COM port: COM14,  with {'name': 'USB_COM', 'tag_config': '47', 'class': '2', 'baud_rate': 115200, 'parity': 'N', 'data_bit': 8, 'stop_bit': 1, 'r...</msg>
+<var>${data}</var>
+<arg>hhs</arg>
+<arg>${INTERFACE_NAME}</arg>
+<arg>${COMPORT}</arg>
+<status status="PASS" start="2025-05-14T17:17:11.731653" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:11.731653" level="INFO">Init sucessfull hhs None Connection succesfully opened COM port: COM14,  with {'name': 'USB_COM', 'tag_config': '47', 'class': '2', 'baud_rate': 115200, 'parity': 'N', 'data_bit': 8, 'stop_bit': 1, 'rts': True, 'dtr': True, 'config_item': 'HA47'} interface</msg>
+<arg>${data}</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:11.731653" elapsed="0.000000"/>
+</kw>
+<arg>${INTERFACE_NAME}</arg>
+<arg>${COMPORT}</arg>
+<status status="PASS" start="2025-05-14T17:17:11.731653" elapsed="0.000000"/>
+</kw>
+<kw name="Reading Mode" owner="Keywords">
+<kw name="Set Reading Mode" owner="HHSKeywords">
+<msg time="2025-05-14T17:17:17.771526" level="INFO">Python WNDPROC handler failed
+Traceback (most recent call last):
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\usb_listener.py", line 88, in device_change_handler
+    self.on_disconnect_callback(device_info)
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\SerialProtocol.py", line 50, in _on_device_disconnection
+    raise ConnectionError(msg)
+ConnectionError: ConnectionError a device has been disconnected. Device name: \\?\USB#VID_05F9&amp;PID_4204#5&amp;c1ffe37&amp;0&amp;1#{86e0d1e0-8089-11d0-9ce4-08003e301f73} Status: Disconnected
+Python WNDPROC handler failed
+Traceback (most recent call last):
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\usb_listener.py", line 88, in device_change_handler
+    self.on_disconnect_callback(device_info)
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\SerialProtocol.py", line 50, in _on_device_disconnection
+    raise ConnectionError(msg)
+ConnectionError: ConnectionError a device has been disconnected. Device name: \\?\USB#VID_05F9&amp;PID_4204#5&amp;c1ffe37&amp;0&amp;1#{40994dfa-45a8-4da7-8b58-acc2d7cea825} Status: Disconnected
+Python WNDPROC handler failed
+Traceback (most recent call last):
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\usb_listener.py", line 88, in device_change_handler
+    self.on_disconnect_callback(device_info)
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\SerialProtocol.py", line 50, in _on_device_disconnection
+    raise ConnectionError(msg)
+ConnectionError: ConnectionError a device has been disconnected. Device name: \\?\USB#VID_05F9&amp;PID_4204#5&amp;c1ffe37&amp;0&amp;1#{a5dcbf10-6530-11d2-901f-00c04fb951ed} Status: Disconnected
+Python WNDPROC handler failed
+Traceback (most recent call last):
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\usb_listener.py", line 88, in device_change_handler
+    self.on_disconnect_callback(device_info)
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\SerialProtocol.py", line 50, in _on_device_disconnection
+    raise ConnectionError(msg)
+ConnectionError: ConnectionError a device has been disconnected. Device name: \\?\USB#VID_05F9&amp;PID_4204#5&amp;c1ffe37&amp;0&amp;4#{86e0d1e0-8089-11d0-9ce4-08003e301f73} Status: Disconnected
+Python WNDPROC handler failed
+Traceback (most recent call last):
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\usb_listener.py", line 88, in device_change_handler
+    self.on_disconnect_callback(device_info)
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\SerialProtocol.py", line 50, in _on_device_disconnection
+    raise ConnectionError(msg)
+ConnectionError: ConnectionError a device has been disconnected. Device name: \\?\USB#VID_05F9&amp;PID_4204#5&amp;c1ffe37&amp;0&amp;4#{40994dfa-45a8-4da7-8b58-acc2d7cea825} Status: Disconnected
+Python WNDPROC handler failed
+Traceback (most recent call last):
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\usb_listener.py", line 88, in device_change_handler
+    self.on_disconnect_callback(device_info)
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\SerialProtocol.py", line 50, in _on_device_disconnection
+    raise ConnectionError(msg)
+ConnectionError: ConnectionError a device has been disconnected. Device name: \\?\USB#VID_05F9&amp;PID_4204#5&amp;c1ffe37&amp;0&amp;4#{a5dcbf10-6530-11d2-901f-00c04fb951ed} Status: Disconnected</msg>
+<msg time="2025-05-14T17:17:17.771526" level="INFO">${data} = $&gt;,&gt;,&gt;</msg>
+<var>${data}</var>
+<arg>${READING_MODE}</arg>
+<status status="PASS" start="2025-05-14T17:17:11.731653" elapsed="6.039873"/>
+</kw>
+<arg>${READING_MODE}</arg>
+<status status="PASS" start="2025-05-14T17:17:11.731653" elapsed="6.039873"/>
+</kw>
+<arg>Open Connection</arg>
+<arg>${INTERFACE_NAME}</arg>
+<arg>${COMPORT}</arg>
+<arg>AND</arg>
+<arg>Reading Mode</arg>
+<arg>${READING_MODE}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-05-14T17:17:11.731653" elapsed="6.039873"/>
+</kw>
+<test id="s1-t1" name="ULE by service port mode" line="16">
+<kw name="EnterSP" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.773043" level="INFO">
+Sending Command: $S</msg>
+<arg>\nSending Command: $S</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.773043" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Service Port" owner="HHSKeywords">
+<msg time="2025-05-14T17:17:17.782050" level="INFO">${data} = $&gt;</msg>
+<var>${data}</var>
+<status status="PASS" start="2025-05-14T17:17:17.773043" elapsed="0.009007"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.782050" level="INFO">Expected--------: $&gt;</msg>
+<arg>Expected--------: ${value}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.782050" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.782050" level="INFO">Responded-------: $&gt;</msg>
+<arg>Responded-------: ${data}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.782050" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${data}</arg>
+<arg>${value}\r</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.782050" elapsed="0.000000"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>${value}\r</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.782050" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-14T17:17:17.782050" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-05-14T17:17:17.782050" elapsed="0.000000"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2025-05-14T17:17:17.782050" elapsed="0.000000"/>
+</return>
+<arg>$&gt;</arg>
+<status status="PASS" start="2025-05-14T17:17:17.773043" elapsed="0.009007"/>
+</kw>
+<kw name="Send" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.782050" level="INFO">
+Sending Command: $CLEEN01</msg>
+<arg>\nSending Command: ${command}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.782050" elapsed="0.000000"/>
+</kw>
+<kw name="Send Command" owner="HHSKeywords">
+<msg time="2025-05-14T17:17:17.890922" level="INFO">${data} = $&gt;</msg>
+<var>${data}</var>
+<arg>${command}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.782050" elapsed="0.108872"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.891988" level="INFO">Expected-------: $&gt;</msg>
+<arg>Expected-------: ${value}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.890922" elapsed="0.001066"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.892996" level="INFO">Responded------: $&gt;</msg>
+<arg>Responded------: ${data}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.891988" elapsed="0.001008"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare Data" owner="Compare">
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.892996" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-14T17:17:17.892996" level="INFO">${data} = True</msg>
+<var>${data}</var>
+<arg>Compare.Compare Data</arg>
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.892996" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.894030" elapsed="0.000000"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.892996" elapsed="0.001034"/>
+</kw>
+<status status="PASS" start="2025-05-14T17:17:17.892996" elapsed="0.001034"/>
+</branch>
+<status status="PASS" start="2025-05-14T17:17:17.892996" elapsed="0.001034"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2025-05-14T17:17:17.894030" elapsed="0.000000"/>
+</return>
+<arg>$CLEEN01</arg>
+<arg>$&gt;</arg>
+<status status="PASS" start="2025-05-14T17:17:17.782050" elapsed="0.111980"/>
+</kw>
+<kw name="Send" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.895067" level="INFO">
+Sending Command: $U00000008554C4532001A0A0A</msg>
+<arg>\nSending Command: ${command}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.895067" elapsed="0.000000"/>
+</kw>
+<kw name="Send Command" owner="HHSKeywords">
+<msg time="2025-05-14T17:17:17.899622" level="INFO">${data} = $&gt;</msg>
+<var>${data}</var>
+<arg>${command}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.895067" elapsed="0.004555"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.899622" level="INFO">Expected-------: $&gt;</msg>
+<arg>Expected-------: ${value}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.899622" level="INFO">Responded------: $&gt;</msg>
+<arg>Responded------: ${data}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare Data" owner="Compare">
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-14T17:17:17.899622" level="INFO">${data} = True</msg>
+<var>${data}</var>
+<arg>Compare.Compare Data</arg>
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.000000"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.000000"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.000000"/>
+</return>
+<arg>$U00000008554C4532001A0A0A</arg>
+<arg>$&gt;</arg>
+<status status="PASS" start="2025-05-14T17:17:17.895067" elapsed="0.004555"/>
+</kw>
+<kw name="Send" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.899622" level="INFO">
+Sending Command: $U000800107B0A4F5554312E446174613D22554C45</msg>
+<arg>\nSending Command: ${command}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.000000"/>
+</kw>
+<kw name="Send Command" owner="HHSKeywords">
+<msg time="2025-05-14T17:17:17.915373" level="INFO">${data} = $&gt;</msg>
+<var>${data}</var>
+<arg>${command}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.015751"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.915373" level="INFO">Expected-------: $&gt;</msg>
+<arg>Expected-------: ${value}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.915373" level="INFO">Responded------: $&gt;</msg>
+<arg>Responded------: ${data}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare Data" owner="Compare">
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-14T17:17:17.915373" level="INFO">${data} = True</msg>
+<var>${data}</var>
+<arg>Compare.Compare Data</arg>
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.000000"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.000000"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.000000"/>
+</return>
+<arg>$U000800107B0A4F5554312E446174613D22554C45</arg>
+<arg>$&gt;</arg>
+<status status="PASS" start="2025-05-14T17:17:17.899622" elapsed="0.015751"/>
+</kw>
+<kw name="Send" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.915373" level="INFO">
+Sending Command: $U001800082054657374220A7D</msg>
+<arg>\nSending Command: ${command}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.000000"/>
+</kw>
+<kw name="Send Command" owner="HHSKeywords">
+<msg time="2025-05-14T17:17:17.930894" level="INFO">${data} = $&gt;</msg>
+<var>${data}</var>
+<arg>${command}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.015521"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.930894" level="INFO">Expected-------: $&gt;</msg>
+<arg>Expected-------: ${value}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.930894" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.930894" level="INFO">Responded------: $&gt;</msg>
+<arg>Responded------: ${data}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.930894" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare Data" owner="Compare">
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.930894" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-14T17:17:17.930894" level="INFO">${data} = True</msg>
+<var>${data}</var>
+<arg>Compare.Compare Data</arg>
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.930894" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.930894" elapsed="0.000000"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.930894" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-14T17:17:17.930894" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-05-14T17:17:17.930894" elapsed="0.000000"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2025-05-14T17:17:17.930894" elapsed="0.000000"/>
+</return>
+<arg>$U001800082054657374220A7D</arg>
+<arg>$&gt;</arg>
+<status status="PASS" start="2025-05-14T17:17:17.915373" elapsed="0.015521"/>
+</kw>
+<kw name="Send" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.946521" level="INFO">
+Sending Command: $CABEN01</msg>
+<arg>\nSending Command: ${command}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</kw>
+<kw name="Send Command" owner="HHSKeywords">
+<msg time="2025-05-14T17:17:17.946521" level="INFO">${data} = $&gt;</msg>
+<var>${data}</var>
+<arg>${command}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.946521" level="INFO">Expected-------: $&gt;</msg>
+<arg>Expected-------: ${value}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.946521" level="INFO">Responded------: $&gt;</msg>
+<arg>Responded------: ${data}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare Data" owner="Compare">
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-14T17:17:17.946521" level="INFO">${data} = True</msg>
+<var>${data}</var>
+<arg>Compare.Compare Data</arg>
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</return>
+<arg>$CABEN01</arg>
+<arg>$&gt;</arg>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</kw>
+<kw name="Send" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:17.946521" level="INFO">
+Sending Command: $Ar</msg>
+<arg>\nSending Command: ${command}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="0.000000"/>
+</kw>
+<kw name="Send Command" owner="HHSKeywords">
+<msg time="2025-05-14T17:17:20.983983" level="INFO">Python WNDPROC handler failed
+Traceback (most recent call last):
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\usb_listener.py", line 88, in device_change_handler
+    self.on_disconnect_callback(device_info)
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\SerialProtocol.py", line 50, in _on_device_disconnection
+    raise ConnectionError(msg)
+ConnectionError: ConnectionError a device has been disconnected. Device name: \\?\USB#VID_05F9&amp;PID_4204#5&amp;c1ffe37&amp;0&amp;1#{86e0d1e0-8089-11d0-9ce4-08003e301f73} Status: Disconnected
+Python WNDPROC handler failed
+Traceback (most recent call last):
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\usb_listener.py", line 88, in device_change_handler
+    self.on_disconnect_callback(device_info)
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\SerialProtocol.py", line 50, in _on_device_disconnection
+    raise ConnectionError(msg)
+ConnectionError: ConnectionError a device has been disconnected. Device name: \\?\USB#VID_05F9&amp;PID_4204#5&amp;c1ffe37&amp;0&amp;1#{40994dfa-45a8-4da7-8b58-acc2d7cea825} Status: Disconnected
+Python WNDPROC handler failed
+Traceback (most recent call last):
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\usb_listener.py", line 88, in device_change_handler
+    self.on_disconnect_callback(device_info)
+  File "C:\Users\vtvu\AppData\Local\Programs\Python\Python312\Lib\site-packages\testmate\Devices\Devices_Libs\SerialProtocol.py", line 50, in _on_device_disconnection
+    raise ConnectionError(msg)
+ConnectionError: ConnectionError a device has been disconnected. Device name: \\?\USB#VID_05F9&amp;PID_4204#5&amp;c1ffe37&amp;0&amp;1#{a5dcbf10-6530-11d2-901f-00c04fb951ed} Status: Disconnected</msg>
+<msg time="2025-05-14T17:17:20.983983" level="INFO">${data} = $&gt;</msg>
+<var>${data}</var>
+<arg>${command}</arg>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="3.037462"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:20.983983" level="INFO">Expected-------: $&gt;</msg>
+<arg>Expected-------: ${value}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:20.983983" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:20.983983" level="INFO">Responded------: $&gt;</msg>
+<arg>Responded------: ${data}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:20.983983" elapsed="0.012124"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare Data" owner="Compare">
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2025-05-14T17:17:20.996107" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-14T17:17:20.996107" level="INFO">${data} = True</msg>
+<var>${data}</var>
+<arg>Compare.Compare Data</arg>
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:20.996107" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-14T17:17:20.996107" elapsed="0.000000"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:20.996107" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-14T17:17:20.996107" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-05-14T17:17:20.996107" elapsed="0.000000"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2025-05-14T17:17:20.996107" elapsed="0.000000"/>
+</return>
+<arg>$Ar</arg>
+<arg>$&gt;</arg>
+<status status="PASS" start="2025-05-14T17:17:17.946521" elapsed="3.049586"/>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:21.026365" level="INFO">
+Reading label: Code128_ABCabc</msg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:21.026365" elapsed="0.001554"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="HHSKeywords">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<status status="PASS" start="2025-05-14T17:17:21.027919" elapsed="9.082883"/>
+</kw>
+<msg time="2025-05-14T17:17:30.110802" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:21.027919" elapsed="9.082883"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:30.115320" level="INFO">Expected-----: ULE Test</msg>
+<arg>Expected-----: ${value}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:30.115320" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:30.118177" level="INFO">Responded----: </msg>
+<arg>Responded----: ${data}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:30.118177" elapsed="0.000000"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-14T17:17:30.118177" level="INFO">${data} = C:\Cong Viec\Demo\hhsautomation\Data\ULE\Code128_ABCabc.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-14T17:17:30.118177" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-14T17:17:30.118177" level="INFO" html="true">&lt;img src=C:\Cong Viec\Demo\hhsautomation\Data\ULE\Code128_ABCabc.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-14T17:17:30.118177" elapsed="0.000000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2025-05-14T17:17:30.118177" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare Data" owner="Compare">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2025-05-14T17:17:30.125450" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-14T17:17:30.125450" level="INFO">${data} = 
+Reading label: Code128_ABCabc 
+Observed:  
+Expected: ULE Test</msg>
+<var>${data}</var>
+<arg>Compare.Compare Data</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2025-05-14T17:17:30.125450" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2025-05-14T17:17:30.130974" level="FAIL">
+Reading label: Code128_ABCabc 
+Observed:  
+Expected: ULE Test != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2025-05-14T17:17:30.125450" elapsed="0.005524">
+Reading label: Code128_ABCabc 
+Observed:  
+Expected: ULE Test != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2025-05-14T17:17:30.125450" elapsed="0.005524">
+Reading label: Code128_ABCabc 
+Observed:  
+Expected: ULE Test != True</status>
+</kw>
+<status status="FAIL" start="2025-05-14T17:17:30.125450" elapsed="0.005524">
+Reading label: Code128_ABCabc 
+Observed:  
+Expected: ULE Test != True</status>
+</branch>
+<status status="FAIL" start="2025-05-14T17:17:30.125450" elapsed="0.005524">
+Reading label: Code128_ABCabc 
+Observed:  
+Expected: ULE Test != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2025-05-14T17:17:30.130974" elapsed="0.000000"/>
+</return>
+<arg>Code128_ABCabc</arg>
+<arg>ULE Test</arg>
+<status status="FAIL" start="2025-05-14T17:17:21.026365" elapsed="9.104609">
+Reading label: Code128_ABCabc 
+Observed:  
+Expected: ULE Test != True</status>
+</kw>
+<doc>Verify that the HH can apply ULE by service port mode</doc>
+<tag>LEO_C</tag>
+<tag>PGS_C</tag>
+<tag>RS232_OPOS</tag>
+<tag>RS232_STD</tag>
+<tag>RS232_WN</tag>
+<tag>USB_COM</tag>
+<tag>USB_CPS</tag>
+<tag>USB_KBD</tag>
+<tag>USB_KBD_ALT</tag>
+<status status="FAIL" start="2025-05-14T17:17:17.771526" elapsed="12.359448">
+Reading label: Code128_ABCabc 
+Observed:  
+Expected: ULE Test != True</status>
+</test>
+<doc>See [https://rationalcld.dl.net/rm/web#action=com.ibm.rdm.web.pages.showArtifactPage&amp;artifactURI=https%3A%2F%2Frationalcld.dl.net%2Frm%2Fresources%2FTX_QGbrWWwpGOmRQxhWBV7oRQ&amp;oslc_config.context=https%3A%2F%2Frationalcld.dl.net%2Fgc%2Fconfiguration%2F533&amp;componentURI=https%3A%2F%2Frationalcld.dl.net%2Frm%2Frm-projects%2F_m3Lwca_8Eeew0scXiQZ_Ag%2Fcomponents%2F_Hl8QMK_-Eeew0scXiQZ_Ag]|JAZZ requirement]
+53369: Service Mode Script Entry
+The SW shall support a means to enter the script using service mode commands</doc>
+<status status="FAIL" start="2025-05-14T17:17:09.780492" elapsed="20.350482"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">LEO_C</stat>
+<stat pass="0" fail="1" skip="0">PGS_C</stat>
+<stat pass="0" fail="1" skip="0">RS232_OPOS</stat>
+<stat pass="0" fail="1" skip="0">RS232_STD</stat>
+<stat pass="0" fail="1" skip="0">RS232_WN</stat>
+<stat pass="0" fail="1" skip="0">USB_COM</stat>
+<stat pass="0" fail="1" skip="0">USB_CPS</stat>
+<stat pass="0" fail="1" skip="0">USB_KBD</stat>
+<stat pass="0" fail="1" skip="0">USB_KBD_ALT</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="AT UL 53369 ServiceModeScriptEntry">AT UL 53369 ServiceModeScriptEntry</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
+ue>
+<status status="NOT RUN" start="2025-05-14T17:17:20.171006" elapsed="0.000000"/>
+</return>
+<arg>$!</arg>
+<status status="FAIL" start="2025-05-14T17:17:20.141815" elapsed="0.029191">SerialTimeoutException: Write timeout</status>
+</kw>
+<doc>Verify that when the HH reset, ULE script still in non-volatile memory and no disable</doc>
+<tag>LEO_C</tag>
+<tag>PGS_C</tag>
+<tag>RS232_OPOS</tag>
+<tag>RS232_STD</tag>
+<tag>RS232_WN</tag>
+<tag>USB_COM</tag>
+<tag>USB_CPS</tag>
+<status status="FAIL" start="2025-05-14T17:17:16.878210" elapsed="3.295319">SerialTimeoutException: Write timeout</status>
+</test>
+<doc>See [https://rationalcld.dl.net/rm/web#action=com.ibm.rdm.web.pages.showArtifactPage&amp;artifactURI=https%3A%2F%2Frationalcld.dl.net%2Frm%2Fresources%2FTX_tOVeBmIKFU1AVWtBzIbWZQ&amp;oslc_config.context=https%3A%2F%2Frationalcld.dl.net%2Fgc%2Fconfiguration%2F533&amp;componentURI=https%3A%2F%2Frationalcld.dl.net%2Frm%2Frm-projects%2F_m3Lwca_8Eeew0scXiQZ_Ag%2Fcomponents%2F_Hl8QMK_-Eeew0scXiQZ_Ag]|JAZZ requirement]
+53368:  Script storage
+The script shall be stored in non-volatile memory.</doc>
+<status status="FAIL" start="2025-05-14T17:17:09.087211" elapsed="11.092325"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">LEO_C</stat>
+<stat pass="0" fail="1" skip="0">PGS_C</stat>
+<stat pass="0" fail="1" skip="0">RS232_OPOS</stat>
+<stat pass="0" fail="1" skip="0">RS232_STD</stat>
+<stat pass="0" fail="1" skip="0">RS232_WN</stat>
+<stat pass="0" fail="1" skip="0">USB_COM</stat>
+<stat pass="0" fail="1" skip="0">USB_CPS</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="AT UL 53368 ScriptStorage">AT UL 53368 ScriptStorage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
