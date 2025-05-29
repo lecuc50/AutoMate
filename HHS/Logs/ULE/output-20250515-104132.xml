@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.8 on win32)" generated="2025-05-15T10:41:32.771718" rpa="false" schemaversion="5">
+<suite id="s1" name="AT UL 53368 ScriptStorage" source="C:\hhsautomation\Tests\ULE\AT_UL_53368_ScriptStorage.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Connection" owner="Keywords">
+<kw name="Init Connection" owner="HHSKeywords">
+<msg time="2025-05-15T10:41:36.294467" level="FAIL">SerialException: could not open port 'COM14': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)</msg>
+<var>${data}</var>
+<arg>hhs</arg>
+<arg>${INTERFACE_NAME}</arg>
+<arg>${COMPORT}</arg>
+<status status="FAIL" start="2025-05-15T10:41:36.292948" elapsed="0.059324">SerialException: could not open port 'COM14': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${data}</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-05-15T10:41:36.353339" elapsed="0.000000"/>
+</kw>
+<arg>${INTERFACE_NAME}</arg>
+<arg>${COMPORT}</arg>
+<status status="FAIL" start="2025-05-15T10:41:36.291860" elapsed="0.061479">SerialException: could not open port 'COM14': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)</status>
+</kw>
+<arg>Open Connection</arg>
+<arg>${INTERFACE_NAME}</arg>
+<arg>${COMPORT}</arg>
+<arg>AND</arg>
+<arg>Reading Mode</arg>
+<arg>${READING_MODE}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="FAIL" start="2025-05-15T10:41:36.291860" elapsed="0.061479">SerialException: could not open port 'COM14': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)</status>
+</kw>
+<test id="s1-t1" name="ULE by service port mode" line="18">
+<doc>Verify that when the HH reset, ULE script still in non-volatile memory and no disable
+OutStructureDefault.ule</doc>
+<tag>LEO_C</tag>
+<tag>PGS_C</tag>
+<tag>RS232_OPOS</tag>
+<tag>RS232_STD</tag>
+<tag>RS232_WN</tag>
+<tag>USB_COM</tag>
+<tag>USB_CPS</tag>
+<status status="FAIL" start="2025-05-15T10:41:36.353339" elapsed="0.000000">Parent suite setup failed:
+SerialException: could not open port 'COM14': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)</status>
+</test>
+<kw name="Close Connection" owner="Keywords" type="TEARDOWN">
+<kw name="Close" owner="HHSKeywords">
+<msg time="2025-05-15T10:41:36.356922" level="INFO">${data} = None</msg>
+<var>${data}</var>
+<status status="PASS" start="2025-05-15T10:41:36.356922" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-15T10:41:36.356922" level="INFO">"Close Connection: " None</msg>
+<arg>"Close Connection: " ${data}</arg>
+<arg>console=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-15T10:41:36.356922" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-05-15T10:41:36.355848" elapsed="0.002001"/>
+</kw>
+<doc>See [https://rationalcld.dl.net/rm/web#action=com.ibm.rdm.web.pages.showArtifactPage&amp;artifactURI=https%3A%2F%2Frationalcld.dl.net%2Frm%2Fresources%2FTX_tOVeBmIKFU1AVWtBzIbWZQ&amp;oslc_config.context=https%3A%2F%2Frationalcld.dl.net%2Fgc%2Fconfiguration%2F533&amp;componentURI=https%3A%2F%2Frationalcld.dl.net%2Frm%2Frm-projects%2F_m3Lwca_8Eeew0scXiQZ_Ag%2Fcomponents%2F_Hl8QMK_-Eeew0scXiQZ_Ag]|JAZZ requirement]
+53368:  Script storage
+The script shall be stored in non-volatile memory.</doc>
+<status status="FAIL" start="2025-05-15T10:41:32.781870" elapsed="3.575979">Suite setup failed:
+SerialException: could not open port 'COM14': FileNotFoundError(2, 'The system cannot find the file specified.', None, 2)</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">LEO_C</stat>
+<stat pass="0" fail="1" skip="0">PGS_C</stat>
+<stat pass="0" fail="1" skip="0">RS232_OPOS</stat>
+<stat pass="0" fail="1" skip="0">RS232_STD</stat>
+<stat pass="0" fail="1" skip="0">RS232_WN</stat>
+<stat pass="0" fail="1" skip="0">USB_COM</stat>
+<stat pass="0" fail="1" skip="0">USB_CPS</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="AT UL 53368 ScriptStorage">AT UL 53368 ScriptStorage</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
