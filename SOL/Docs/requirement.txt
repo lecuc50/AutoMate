@@ -1,0 +1,6 @@
+----install libary------
+pip install pyserial --- install Serial Port to python
+pip install AppOpener  --- install AppOpener to open Application by name
+pip install robotframework  
+pip install robotframework-seleniumlibrary
+
