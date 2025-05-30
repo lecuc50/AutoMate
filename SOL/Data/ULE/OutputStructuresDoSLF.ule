@@ -1,0 +1,15 @@
+{
+    OUT2=OUT1
+    OUT3=OUT1
+    OUT4=OUT1
+    OUT5=OUT1
+    OUT2.Data="\nOUT2\n"
+    OUT3.Data="OUT3\n"
+    OUT4.Data="OUT4\n"
+    OUT5.Data="OUT5\n"
+    DoSLF(OUT1)
+    DoSLF(OUT2)
+    DoSLF(OUT3)
+    DoSLF(OUT4)
+    DoSLF(OUT5)
+}

@@ -1,0 +1,2379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.9.9 on win32)" generated="2024-11-14T17:11:57.483501" rpa="false" schemaversion="5">
+<suite id="s1" name="ATQ Codabar ShortMargin" source="C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\ATQ_Codabar_ShortMargin.robot">
+<kw name="Open Com port and set Interface" owner="Keywords" type="SETUP">
+<kw name="Set Interface Name" owner="Commands">
+<arg>${interface_name}</arg>
+<status status="PASS" start="2024-11-14T17:11:58.795344" elapsed="0.000000"/>
+</kw>
+<kw name="Connect With COM port" owner="Keywords">
+<kw name="Open Com Port" owner="Commands">
+<msg time="2024-11-14T17:11:58.801122" level="INFO">${data} = OK</msg>
+<var>${data}</var>
+<arg>${COMPORT}</arg>
+<status status="PASS" start="2024-11-14T17:11:58.795344" elapsed="0.005778"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Open Com Port ${COMPORT}: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:11:58.801122" elapsed="0.000000"/>
+</kw>
+<arg>${COMPORT}</arg>
+<status status="PASS" start="2024-11-14T17:11:58.795344" elapsed="0.005778"/>
+</kw>
+<kw name="Set Interface For HH" owner="Keywords">
+<kw name="Set Interface" owner="Commands">
+<msg time="2024-11-14T17:12:12.832185" level="INFO">${data} = $S,AE,HA05,CSNRM03,Ar:$&gt;,&gt;,&gt;,&gt;,&gt;\r</msg>
+<var>${data}</var>
+<arg>${interface_name}</arg>
+<arg>${reading_mode}</arg>
+<status status="PASS" start="2024-11-14T17:11:58.802122" elapsed="14.030063"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Set Interface ${interface_name} For HH successful: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:12.832185" elapsed="0.000968"/>
+</kw>
+<arg>${interface_name}</arg>
+<arg>${reading_mode}</arg>
+<status status="PASS" start="2024-11-14T17:11:58.801122" elapsed="14.032031"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:12:12.833153" level="INFO">${init_interface_name} = RS232_STD</msg>
+<var>${init_interface_name}</var>
+<arg>${interface_name}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:12:12.833153" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:12:12.833153" level="INFO">${init_interface_name} = RS232_STD</msg>
+<arg>${init_interface_name}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-14T17:12:12.833153" elapsed="0.000000"/>
+</kw>
+<kw name="SetSoftTrigger" owner="Keywords">
+<kw name="Set Trigger" owner="Commands">
+<arg>${on_off}</arg>
+<status status="PASS" start="2024-11-14T17:12:12.834151" elapsed="0.000000"/>
+</kw>
+<arg>${soft_trigger}</arg>
+<doc>Set Soft trigger to On/Off</doc>
+<status status="PASS" start="2024-11-14T17:12:12.834151" elapsed="0.000000"/>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:12.835148" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:12:12.835148" elapsed="11.380426"/>
+</kw>
+<msg time="2024-11-14T17:12:24.216316" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:12:12.835148" elapsed="11.381168"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:24.216316" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:24.217313" elapsed="0.000360"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:12:24.217673" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\$P,AE,Interface,CSNRM03,P.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:12:24.217673" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:12:24.218673" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\$P,AE,Interface,CSNRM03,P.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:12:24.217673" elapsed="0.001000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:12:24.217673" elapsed="0.001000"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2024-11-14T17:12:24.220697" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2024-11-14T17:12:24.221689" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-11-14T17:12:24.218673" elapsed="0.003016"/>
+</branch>
+<status status="PASS" start="2024-11-14T17:12:24.218673" elapsed="0.003016"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:12:24.221689" elapsed="0.000000"/>
+</return>
+<arg>$P,AE,Interface,${reading_mode},P</arg>
+<status status="PASS" start="2024-11-14T17:12:12.834151" elapsed="11.387538"/>
+</kw>
+<kw name="Send Command" owner="Commands">
+<msg time="2024-11-14T17:12:24.632527" level="INFO">${RevA_Version_Base} = Gryphon GD4600 SOFTWARE RELEASE 0.10 Nov  5 2024\r</msg>
+<var>${RevA_Version_Base}</var>
+<arg>$!</arg>
+<status status="PASS" start="2024-11-14T17:12:24.221689" elapsed="0.410838"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:12:24.632527" level="INFO">${RevA_Version_Base} = Gryphon GD4600 SOFTWARE RELEASE 0.10 Nov  5 2024\r</msg>
+<arg>${RevA_Version_Base}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-14T17:12:24.632527" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:12:24.633561" level="INFO">RS232_STD + COM2 + CSNRM03 + Gryphon GD4600 SOFTWARE RELEASE 0.10 Nov  5 2024\r</msg>
+<arg>${interface_name} + ${COMPORT} + ${reading_mode} + ${RevA_Version_Base}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:12:24.633561" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Running On ${COMPORT}: ${interface_name}: ${reading_mode}: ${RevA_Version_Base}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:24.633561" elapsed="0.000988"/>
+</kw>
+<arg>${interface_name}</arg>
+<arg>${COMPORT}</arg>
+<arg>${reading_mode}</arg>
+<status status="PASS" start="2024-11-14T17:11:58.794347" elapsed="25.840202"/>
+</kw>
+<test id="s1-t1" name="ATQ_Codabar_ShortMargin_CBLO01" line="9">
+<kw name="Send" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nSending Command: ${command}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:24.635523" elapsed="0.000000"/>
+</kw>
+<kw name="Send Command" owner="Commands">
+<msg time="2024-11-14T17:12:38.668844" level="INFO">${data} = $&gt;,&gt;,&gt;,&gt;\r</msg>
+<var>${data}</var>
+<arg>${command}</arg>
+<status status="PASS" start="2024-11-14T17:12:24.635523" elapsed="14.033321"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-------: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:38.669564" elapsed="0.000389"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded------: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:38.669953" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:12:38.670954" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:12:38.670954" level="INFO">${data} = True</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:12:38.670954" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-14T17:12:38.670954" elapsed="0.000996"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:12:38.670954" elapsed="0.000996"/>
+</kw>
+<status status="PASS" start="2024-11-14T17:12:38.669953" elapsed="0.001997"/>
+</branch>
+<status status="PASS" start="2024-11-14T17:12:38.669953" elapsed="0.001997"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:12:38.671950" elapsed="0.000000"/>
+</return>
+<arg>$S,CCBEN01,CCBLO01,Ar</arg>
+<arg>$&gt;,&gt;,&gt;,&gt;</arg>
+<status status="PASS" start="2024-11-14T17:12:24.634549" elapsed="14.037401"/>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:38.672333" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:12:38.673333" elapsed="8.898676"/>
+</kw>
+<msg time="2024-11-14T17:12:47.572009" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:12:38.672333" elapsed="8.899676"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:47.572009" elapsed="0.000996"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:47.573005" elapsed="0.000938"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:12:47.573943" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnoquietzone_1a.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:12:47.573943" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:12:47.574974" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnoquietzone_1a.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:12:47.574974" elapsed="0.000000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:12:47.573943" elapsed="0.001031"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:12:47.574974" elapsed="0.000991"/>
+</kw>
+<msg time="2024-11-14T17:12:47.575965" level="INFO">${data} = 
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:12:47.574974" elapsed="0.000991"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:12:47.575965" level="FAIL">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:12:47.575965" elapsed="0.000000">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:12:47.575965" elapsed="0.000000">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:12:47.574974" elapsed="0.000991">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:12:47.574974" elapsed="0.000991">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:12:47.576968" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithnoquietzone_1a</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:12:38.672333" elapsed="8.904635">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:47.576968" elapsed="0.000967"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:12:47.577935" elapsed="9.190059"/>
+</kw>
+<msg time="2024-11-14T17:12:56.768991" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:12:47.577935" elapsed="9.191056"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:56.768991" elapsed="0.000997"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:56.769988" elapsed="0.000994"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:12:56.770982" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atfirstside_2a.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:12:56.770982" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:12:56.771979" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atfirstside_2a.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:12:56.770982" elapsed="0.000997"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:12:56.770982" elapsed="0.000997"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:12:56.771979" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:12:56.771979" level="INFO">${data} = 
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:12:56.771979" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:12:56.772976" level="FAIL">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:12:56.772976" elapsed="0.000000">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:12:56.772976" elapsed="0.000000">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:12:56.771979" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:12:56.771979" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:12:56.772976" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithnormalquietzone_10x_atfirstside_2a</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:12:47.576968" elapsed="9.196008">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:12:56.773974" elapsed="0.000704"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:12:56.774678" elapsed="9.442241"/>
+</kw>
+<msg time="2024-11-14T17:13:06.216919" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:12:56.774678" elapsed="9.442241"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:06.217915" elapsed="0.000999"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:06.218914" elapsed="0.001000"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:13:06.222901" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atlastside_2b.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:13:06.221909" elapsed="0.000992"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:13:06.222901" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atlastside_2b.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:13:06.222901" elapsed="0.000000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:13:06.220927" elapsed="0.001974"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:13:06.223898" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:13:06.223898" level="INFO">${data} = 
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:06.222901" elapsed="0.000997"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:13:06.223898" level="FAIL">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:13:06.223898" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:13:06.223898" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:13:06.222901" elapsed="0.001994">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:13:06.222901" elapsed="0.001994">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:13:06.224895" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithnormalquietzone_10x_atlastside_2b</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:12:56.773974" elapsed="9.450921">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:06.224895" elapsed="0.000997"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:13:06.225892" elapsed="9.404485"/>
+</kw>
+<msg time="2024-11-14T17:13:15.630377" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:06.225892" elapsed="9.404485"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:15.630377" elapsed="0.000998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:15.631375" elapsed="0.000000"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:13:15.632372" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atbothsides_2c.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:13:15.632372" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:13:15.632372" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atbothsides_2c.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:13:15.632372" elapsed="0.000000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:13:15.631375" elapsed="0.000997"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:13:15.633370" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:13:15.633370" level="INFO">${data} = 
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:15.633370" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:13:15.634367" level="FAIL">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:13:15.634367" elapsed="0.000000">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:13:15.633370" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:13:15.633370" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:13:15.633370" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:13:15.634367" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithnormalquietzone_10x_atbothsides_2c</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:13:06.224895" elapsed="9.409472">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:15.635364" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:13:15.636361" elapsed="9.338028"/>
+</kw>
+<msg time="2024-11-14T17:13:24.975386" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:15.635364" elapsed="9.340022"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:24.975386" elapsed="0.000997"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:24.977387" elapsed="0.000824"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:13:24.979216" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithshortquietzone_3x_atfirstside_3a.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:13:24.979216" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:13:24.980232" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithshortquietzone_3x_atfirstside_3a.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:13:24.979216" elapsed="0.001016"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:13:24.978211" elapsed="0.002021"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:13:24.980232" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:13:24.981208" level="INFO">${data} = 
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:24.980232" elapsed="0.000976"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:13:24.981208" level="FAIL">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:13:24.981208" elapsed="0.000000">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:13:24.981208" elapsed="0.000000">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:13:24.980232" elapsed="0.000976">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:13:24.980232" elapsed="0.000976">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:13:24.981208" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithshortquietzone_3x_atfirstside_3a</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:13:15.635364" elapsed="9.345844">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:24.982236" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:13:24.983204" elapsed="9.282927"/>
+</kw>
+<msg time="2024-11-14T17:13:34.267139" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:24.983204" elapsed="9.283935"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:34.267139" elapsed="0.000996"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:34.269136" elapsed="0.000899"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:13:34.272062" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithshortquietzone_3x_atlastside_3b.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:13:34.272062" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:13:34.273063" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithshortquietzone_3x_atlastside_3b.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:13:34.273063" elapsed="0.000000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:13:34.270035" elapsed="0.003028"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:13:34.274030" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:13:34.274030" level="INFO">${data} = 
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:34.273063" elapsed="0.000967"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:13:34.274030" level="FAIL">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:13:34.274030" elapsed="0.000000">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:13:34.274030" elapsed="0.000998">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:13:34.273063" elapsed="0.001965">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:13:34.273063" elapsed="0.001965">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:13:34.275028" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithshortquietzone_3x_atlastside_3b</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:13:24.982236" elapsed="9.292792">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:34.275587" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:13:34.276587" elapsed="9.197232"/>
+</kw>
+<msg time="2024-11-14T17:13:43.473819" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:34.276587" elapsed="9.197232"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:43.474587" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:43.474587" elapsed="0.000000"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:13:43.475583" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithshortquietzone_3x_atbothsides_3c.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:13:43.475583" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:13:43.476581" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithshortquietzone_3x_atbothsides_3c.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:13:43.476581" elapsed="0.000000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:13:43.475583" elapsed="0.000998"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:13:43.476581" elapsed="0.000995"/>
+</kw>
+<msg time="2024-11-14T17:13:43.477576" level="INFO">${data} = 
+Reading label: Codabarwithshortquietzone_3x_atbothsides_3c 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:43.476581" elapsed="0.000995"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:13:43.477576" level="FAIL">
+Reading label: Codabarwithshortquietzone_3x_atbothsides_3c 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:13:43.477576" elapsed="0.000000">
+Reading label: Codabarwithshortquietzone_3x_atbothsides_3c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:13:43.477576" elapsed="0.000000">
+Reading label: Codabarwithshortquietzone_3x_atbothsides_3c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:13:43.476581" elapsed="0.000995">
+Reading label: Codabarwithshortquietzone_3x_atbothsides_3c 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:13:43.476581" elapsed="0.000995">
+Reading label: Codabarwithshortquietzone_3x_atbothsides_3c 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:13:43.477576" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithshortquietzone_3x_atbothsides_3c</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:13:34.275587" elapsed="9.202988">
+Reading label: Codabarwithshortquietzone_3x_atbothsides_3c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:43.478575" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:13:43.479572" elapsed="9.230413"/>
+</kw>
+<msg time="2024-11-14T17:13:52.709985" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:43.479572" elapsed="9.230413"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:52.710987" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:52.710987" elapsed="0.000000"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:13:52.711983" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithveryshortquietzone_1x_atfirstside_4a.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:13:52.711983" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:13:52.711983" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithveryshortquietzone_1x_atfirstside_4a.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:13:52.711983" elapsed="0.000997"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:13:52.711983" elapsed="0.000997"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:13:52.712980" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:13:52.712980" level="INFO">${data} = 
+Reading label: Codabarwithveryshortquietzone_1x_atfirstside_4a 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:52.712980" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:13:52.713976" level="FAIL">
+Reading label: Codabarwithveryshortquietzone_1x_atfirstside_4a 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:13:52.713976" elapsed="0.000000">
+Reading label: Codabarwithveryshortquietzone_1x_atfirstside_4a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:13:52.713976" elapsed="0.000000">
+Reading label: Codabarwithveryshortquietzone_1x_atfirstside_4a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:13:52.712980" elapsed="0.000996">
+Reading label: Codabarwithveryshortquietzone_1x_atfirstside_4a 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:13:52.712980" elapsed="0.000996">
+Reading label: Codabarwithveryshortquietzone_1x_atfirstside_4a 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:13:52.713976" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithveryshortquietzone_1x_atfirstside_4a</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:13:43.478575" elapsed="9.235401">
+Reading label: Codabarwithveryshortquietzone_1x_atfirstside_4a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:13:52.714975" elapsed="0.000997"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:13:52.715972" elapsed="9.214971"/>
+</kw>
+<msg time="2024-11-14T17:14:01.930943" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:13:52.715972" elapsed="9.215686"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:01.931658" elapsed="0.000465"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:01.932123" elapsed="0.000546"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:14:01.932669" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithveryshortquietzone_1x_atlastside_4b.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:14:01.932669" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:14:01.933670" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithveryshortquietzone_1x_atlastside_4b.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:14:01.932669" elapsed="0.001001"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:14:01.932669" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:14:01.933670" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:14:01.933670" level="INFO">${data} = 
+Reading label: Codabarwithveryshortquietzone_1x_atlastside_4b 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:01.933670" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:14:01.934666" level="FAIL">
+Reading label: Codabarwithveryshortquietzone_1x_atlastside_4b 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:14:01.934666" elapsed="0.000000">
+Reading label: Codabarwithveryshortquietzone_1x_atlastside_4b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:14:01.934666" elapsed="0.000000">
+Reading label: Codabarwithveryshortquietzone_1x_atlastside_4b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:14:01.933670" elapsed="0.000996">
+Reading label: Codabarwithveryshortquietzone_1x_atlastside_4b 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:14:01.933670" elapsed="0.000996">
+Reading label: Codabarwithveryshortquietzone_1x_atlastside_4b 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:14:01.934666" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithveryshortquietzone_1x_atlastside_4b</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:13:52.714975" elapsed="9.219691">
+Reading label: Codabarwithveryshortquietzone_1x_atlastside_4b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:01.935663" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:14:01.936661" elapsed="9.187577"/>
+</kw>
+<msg time="2024-11-14T17:14:11.124972" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:01.935663" elapsed="9.189309"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:11.124972" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:11.124972" elapsed="0.001026"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:14:11.125998" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithveryshortquietzone_1x_atbothsides_4c.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:14:11.125998" elapsed="0.000997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:14:11.126995" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithveryshortquietzone_1x_atbothsides_4c.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:14:11.126995" elapsed="0.000000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:14:11.125998" elapsed="0.000997"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:14:11.127994" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:14:11.127994" level="INFO">${data} = 
+Reading label: Codabarwithveryshortquietzone_1x_atbothsides_4c 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:11.126995" elapsed="0.000999"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:14:11.128991" level="FAIL">
+Reading label: Codabarwithveryshortquietzone_1x_atbothsides_4c 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:14:11.127994" elapsed="0.000997">
+Reading label: Codabarwithveryshortquietzone_1x_atbothsides_4c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:14:11.127994" elapsed="0.000997">
+Reading label: Codabarwithveryshortquietzone_1x_atbothsides_4c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:14:11.126995" elapsed="0.001996">
+Reading label: Codabarwithveryshortquietzone_1x_atbothsides_4c 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:14:11.126995" elapsed="0.001996">
+Reading label: Codabarwithveryshortquietzone_1x_atbothsides_4c 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:14:11.128991" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithveryshortquietzone_1x_atbothsides_4c</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:14:01.935663" elapsed="9.193328">
+Reading label: Codabarwithveryshortquietzone_1x_atbothsides_4c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<doc>Test case checks the capability to decode the Codabar with short quiet zones</doc>
+<tag>RS232_OPOS</tag>
+<tag>RS232_STD</tag>
+<tag>RS232_WN</tag>
+<tag>USB_COM</tag>
+<tag>USB_CPS</tag>
+<status status="FAIL" start="2024-11-14T17:12:24.634549" elapsed="106.494442">Several failures occurred:
+
+1) 
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True
+
+2) 
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True
+
+3) 
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True
+
+4) 
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+    [ Message content over the limit has been removed. ]
+
+7) 
+Reading label: Codabarwithshortquietzone_3x_atbothsides_3c 
+Observed:  
+Expected: a378591b != True
+
+8) 
+Reading label: Codabarwithveryshortquietzone_1x_atfirstside_4a 
+Observed:  
+Expected: a378591b != True
+
+9) 
+Reading label: Codabarwithveryshortquietzone_1x_atlastside_4b 
+Observed:  
+Expected: a378591b != True
+
+10) 
+Reading label: Codabarwithveryshortquietzone_1x_atbothsides_4c 
+Observed:  
+Expected: a378591b != True</status>
+</test>
+<test id="s1-t2" name="ATQ_Codabar_ShortMargin_CBLO02" line="24">
+<kw name="Send" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nSending Command: ${command}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:11.131952" elapsed="0.000000"/>
+</kw>
+<kw name="Send Command" owner="Commands">
+<msg time="2024-11-14T17:14:25.175971" level="INFO">${data} = $&gt;,&gt;,&gt;,&gt;\r</msg>
+<var>${data}</var>
+<arg>${command}</arg>
+<status status="PASS" start="2024-11-14T17:14:11.131952" elapsed="14.044019"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-------: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:25.176970" elapsed="0.000998"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded------: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:25.177968" elapsed="0.000998"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:14:25.180955" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:14:25.180955" level="INFO">${data} = True</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nSending Command: ${command}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:25.179963" elapsed="0.000992"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-14T17:14:25.180955" elapsed="0.000000"/>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:25.180955" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-14T17:14:25.179963" elapsed="0.000992"/>
+</branch>
+<status status="PASS" start="2024-11-14T17:14:25.179963" elapsed="0.000992"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:14:25.180955" elapsed="0.000998"/>
+</return>
+<arg>$S,CCBEN01,CCBLO02,Ar</arg>
+<arg>$&gt;,&gt;,&gt;,&gt;</arg>
+<status status="PASS" start="2024-11-14T17:14:11.131952" elapsed="14.050001"/>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:25.181953" elapsed="0.000997"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:14:25.182950" elapsed="8.935855"/>
+</kw>
+<msg time="2024-11-14T17:14:34.118805" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:25.182950" elapsed="8.935855"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:34.119547" elapsed="0.000448"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:34.119995" elapsed="0.000000"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:14:34.120996" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnoquietzone_1a.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:14:34.120996" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:14:34.120996" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnoquietzone_1a.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:14:34.120996" elapsed="0.000000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:14:34.119995" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:14:34.121992" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:14:34.121992" level="INFO">${data} = 
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:34.121992" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:14:34.121992" level="FAIL">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:14:34.121992" elapsed="0.000998">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:14:34.121992" elapsed="0.000998">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:14:34.120996" elapsed="0.001994">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:14:34.120996" elapsed="0.001994">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:14:34.122990" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithnoquietzone_1a</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:14:25.181953" elapsed="8.941037">
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:34.123987" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:14:34.123987" elapsed="9.223316"/>
+</kw>
+<msg time="2024-11-14T17:14:43.348304" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:34.123987" elapsed="9.224317"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:43.348304" elapsed="0.001002"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:43.350297" elapsed="0.000000"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:14:43.351291" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atfirstside_2a.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:14:43.351291" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:14:43.351291" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atfirstside_2a.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:14:43.351291" elapsed="0.000997"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:14:43.350297" elapsed="0.001991"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:14:43.352288" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:14:43.352288" level="INFO">${data} = 
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:43.352288" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:14:43.353285" level="FAIL">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:14:43.353285" elapsed="0.000000">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:14:43.353285" elapsed="0.000000">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:14:43.352288" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:14:43.352288" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:14:43.353285" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithnormalquietzone_10x_atfirstside_2a</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:14:34.122990" elapsed="9.230295">
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:43.354282" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:14:43.355280" elapsed="9.192785"/>
+</kw>
+<msg time="2024-11-14T17:14:52.548065" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:43.354282" elapsed="9.193783"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:52.548065" elapsed="0.001002"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:52.549067" elapsed="0.000861"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:14:52.549928" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atlastside_2b.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:14:52.549928" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:14:52.550929" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atlastside_2b.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:14:52.549928" elapsed="0.001001"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:14:52.549928" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:14:52.550929" elapsed="0.000997"/>
+</kw>
+<msg time="2024-11-14T17:14:52.551926" level="INFO">${data} = 
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:52.550929" elapsed="0.000997"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:14:52.552923" level="FAIL">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:14:52.552923" elapsed="0.000000">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:14:52.552923" elapsed="0.000000">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:14:52.550929" elapsed="0.001994">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:14:52.550929" elapsed="0.001994">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:14:52.552923" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithnormalquietzone_10x_atlastside_2b</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:14:43.354282" elapsed="9.198641">
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:14:52.553920" elapsed="0.000648"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:14:52.554568" elapsed="9.229856"/>
+</kw>
+<msg time="2024-11-14T17:15:01.784424" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:14:52.554568" elapsed="9.229856"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:15:01.784424" elapsed="0.000746"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:15:01.785170" elapsed="0.000843"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:15:01.786013" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atbothsides_2c.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:15:01.786013" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:15:01.787014" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithnormalquietzone_10x_atbothsides_2c.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:15:01.786013" elapsed="0.001001"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:15:01.786013" elapsed="0.001001"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:15:01.787014" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:15:01.787014" level="INFO">${data} = 
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:15:01.787014" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:15:01.788011" level="FAIL">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:15:01.788011" elapsed="0.000000">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:15:01.788011" elapsed="0.000000">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:15:01.787014" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:15:01.787014" elapsed="0.000997">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:15:01.788011" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithnormalquietzone_10x_atbothsides_2c</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:14:52.553920" elapsed="9.234091">
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:15:01.789007" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:15:01.790005" elapsed="9.242588"/>
+</kw>
+<msg time="2024-11-14T17:15:11.032593" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:15:01.789007" elapsed="9.243586"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:15:11.033595" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:15:11.033595" elapsed="0.000997"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:15:11.035588" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithshortquietzone_3x_atfirstside_3a.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:15:11.034592" elapsed="0.000996"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:15:11.035588" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithshortquietzone_3x_atfirstside_3a.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:15:11.035588" elapsed="0.000000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:15:11.034592" elapsed="0.000996"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:15:11.036585" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:15:11.036585" level="INFO">${data} = 
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:15:11.035588" elapsed="0.000997"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:15:11.037582" level="FAIL">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:15:11.036585" elapsed="0.000997">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:15:11.036585" elapsed="0.000997">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:15:11.035588" elapsed="0.001994">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:15:11.035588" elapsed="0.001994">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:15:11.037582" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithshortquietzone_3x_atfirstside_3a</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:15:01.789007" elapsed="9.248575">
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:15:11.038580" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:15:11.038580" elapsed="9.238174"/>
+</kw>
+<msg time="2024-11-14T17:15:20.276754" level="INFO">${data} = </msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:15:11.038580" elapsed="9.238174"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:15:20.278018" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:15:20.278018" elapsed="0.001034"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-14T17:15:20.280012" level="INFO">${data} = C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithshortquietzone_3x_atlastside_3b.jpg</msg>
+<var>${data}</var>
+<arg>${current_directory}\\${image_name}.jpg</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-14T17:15:20.280012" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-14T17:15:20.280012" level="INFO" html="true">&lt;img src=C:\Diamond\HHS\HHSProject\Procedures\Quick_Test\DataSet\Codabarwithshortquietzone_3x_atlastside_3b.jpg&gt;</msg>
+<arg>&lt;img src=${data}&gt;</arg>
+<arg>html=true</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-14T17:15:20.280012" elapsed="0.000000"/>
+</kw>
+<arg>${image_name}</arg>
+<status status="PASS" start="2024-11-14T17:15:20.279052" elapsed="0.001956"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Compare" owner="Commands">
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-14T17:15:20.281008" elapsed="0.000000"/>
+</kw>
+<msg time="2024-11-14T17:15:20.281008" level="INFO">${data} = 
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b</msg>
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:15:20.281008" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-11-14T17:15:20.282006" level="FAIL">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</msg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-11-14T17:15:20.282006" elapsed="0.000000">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="FAIL" start="2024-11-14T17:15:20.281008" elapsed="0.000998">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<status status="FAIL" start="2024-11-14T17:15:20.281008" elapsed="0.000998">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</status>
+</branch>
+<status status="FAIL" start="2024-11-14T17:15:20.281008" elapsed="0.000998">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</status>
+</if>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2024-11-14T17:15:20.282006" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithshortquietzone_3x_atlastside_3b</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:15:11.037582" elapsed="9.244424">
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nReading label: ${image_name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-14T17:15:20.283003" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<kw name="Read Label" owner="Commands">
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Load image to Eink and wait HH read the barcode to respond data
+- For Label Programing, the system will wait for default 4s to HH can read this label
+- For Label programing digit, the system will wait for default 1.2 s to HH can't read this label twice</doc>
+<status status="PASS" start="2024-11-14T17:15:20.283003" elapsed="6.745350"/>
+</kw>
+<msg time="2024-11-14T17:15:27.028353" level="INFO">${data} = Keywords.py: read_label:, ExecutionFailed('Execution terminated by signal')</msg>
+<var>${data}</var>
+<arg>Read Label</arg>
+<arg>${current_directory}</arg>
+<arg>${image_name}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="PASS" start="2024-11-14T17:15:20.283003" elapsed="6.745350"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Expected-----: ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="FAIL" start="2024-11-14T17:15:27.028353" elapsed="0.000000">Execution terminated by signal</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Responded----: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-11-14T17:15:27.028353" elapsed="0.000000"/>
+</kw>
+<kw name="LogImage" owner="Keywords">
+<arg>${image_name}</arg>
+<status status="NOT RUN" start="2024-11-14T17:15:27.028353" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="$value!=None">
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<var>${data}</var>
+<arg>Compare</arg>
+<arg>\nReading label: ${image_name}</arg>
+<arg>${data}</arg>
+<arg>${value}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2024-11-14T17:15:27.029351" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" owner="BuiltIn">
+<arg>Should Be Equal</arg>
+<arg>${data}</arg>
+<arg>True</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<status status="NOT RUN" start="2024-11-14T17:15:27.029351" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-11-14T17:15:27.029351" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2024-11-14T17:15:27.029351" elapsed="0.000000"/>
+</if>
+<return>
+<value>${data}</value>
+<status status="NOT RUN" start="2024-11-14T17:15:27.029351" elapsed="0.000000"/>
+</return>
+<arg>Codabarwithshortquietzone_3x_atbothsides_3c</arg>
+<arg>a378591b</arg>
+<status status="FAIL" start="2024-11-14T17:15:20.282006" elapsed="6.747345">Execution terminated by signal</status>
+</kw>
+<kw name="Read" owner="Keywords">
+<arg>Codabarwithveryshortquietzone_1x_atfirstside_4a</arg>
+<arg>a378591b</arg>
+<status status="NOT RUN" start="2024-11-14T17:15:27.029351" elapsed="0.000000"/>
+</kw>
+<kw name="Read" owner="Keywords">
+<arg>Codabarwithveryshortquietzone_1x_atlastside_4b</arg>
+<arg>a378591b</arg>
+<status status="NOT RUN" start="2024-11-14T17:15:27.030348" elapsed="0.000000"/>
+</kw>
+<kw name="Read" owner="Keywords">
+<arg>Codabarwithveryshortquietzone_1x_atbothsides_4c</arg>
+<arg>a378591b</arg>
+<status status="NOT RUN" start="2024-11-14T17:15:27.030348" elapsed="0.000000"/>
+</kw>
+<doc>Test case checks the capability to decode the Codabar with short quiet zones</doc>
+<tag>RS232_OPOS</tag>
+<tag>RS232_STD</tag>
+<tag>RS232_WN</tag>
+<tag>USB_COM</tag>
+<tag>USB_CPS</tag>
+<status status="FAIL" start="2024-11-14T17:14:11.130985" elapsed="75.900359">Several failures occurred:
+
+1) 
+Reading label: Codabarwithnoquietzone_1a 
+Observed:  
+Expected: a378591b != True
+
+2) 
+Reading label: Codabarwithnormalquietzone_10x_atfirstside_2a 
+Observed:  
+Expected: a378591b != True
+
+3) 
+Reading label: Codabarwithnormalquietzone_10x_atlastside_2b 
+Observed:  
+Expected: a378591b != True
+
+4) 
+Reading label: Codabarwithnormalquietzone_10x_atbothsides_2c 
+Observed:  
+Expected: a378591b != True
+
+5) 
+Reading label: Codabarwithshortquietzone_3x_atfirstside_3a 
+Observed:  
+Expected: a378591b != True
+
+6) 
+Reading label: Codabarwithshortquietzone_3x_atlastside_3b 
+Observed:  
+Expected: a378591b != True
+
+7) Execution terminated by signal</status>
+</test>
+<test id="s1-t3" name="ATQ_Codabar_ShortMargin_CBLO03" line="39">
+<doc>Test case checks the capability to decode the Codabar with short quiet zones</doc>
+<tag>robot:exit</tag>
+<tag>RS232_OPOS</tag>
+<tag>RS232_STD</tag>
+<tag>RS232_WN</tag>
+<tag>USB_COM</tag>
+<tag>USB_CPS</tag>
+<status status="FAIL" start="2024-11-14T17:15:27.032343" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t4" name="ATQ_Codabar_ShortMargin_CBLO04" line="54">
+<doc>Test case checks the capability to decode the Codabar with short quiet zones</doc>
+<tag>robot:exit</tag>
+<tag>RS232_OPOS</tag>
+<tag>RS232_STD</tag>
+<tag>RS232_WN</tag>
+<tag>USB_COM</tag>
+<tag>USB_CPS</tag>
+<status status="FAIL" start="2024-11-14T17:15:27.033340" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t5" name="ATQ_Codabar_ShortMargin_CBLO05" line="69">
+<doc>Test case checks the capability to decode the Codabar with short quiet zones</doc>
+<tag>robot:exit</tag>
+<tag>RS232_OPOS</tag>
+<tag>RS232_STD</tag>
+<tag>RS232_WN</tag>
+<tag>USB_COM</tag>
+<tag>USB_CPS</tag>
+<status status="FAIL" start="2024-11-14T17:15:27.034337" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" start="2024-11-14T17:11:57.491505" elapsed="209.543829"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="5" skip="0">RS232_OPOS</stat>
+<stat pass="0" fail="5" skip="0">RS232_STD</stat>
+<stat pass="0" fail="5" skip="0">RS232_WN</stat>
+<stat pass="0" fail="5" skip="0">USB_COM</stat>
+<stat pass="0" fail="5" skip="0">USB_CPS</stat>
+</tag>
+<suite>
+<stat pass="0" fail="5" skip="0" id="s1" name="ATQ Codabar ShortMargin">ATQ Codabar ShortMargin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
